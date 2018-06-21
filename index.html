@@ -11,10 +11,8 @@ const ipfsOptions = {
 				"/ip4/127.0.0.1/tcp/4001",
 				"/ip4/127.0.0.1/tcp/4002/ws"
 			],
-			Announce: [],
-			NoAnnounce: []
-			//API: "/ip4/127.0.0.1/tcp/5001",
-			//Gateway: "/ip4/127.0.0.1/tcp/8080"
+			API: "/ip4/127.0.0.1/tcp/5002",
+			Gateway: "/ip4/127.0.0.1/tcp/9090"
 		}
 	},
 	repo: 'ipfs-' + Math.random(),
@@ -23,7 +21,7 @@ const ipfsOptions = {
 	}
 };
     //const node = new Ipfs({ repo: 'ipfs-' + Math.random() })
-	const node = new Ipfs(ipfsOptions)
+	const node = new Ipfs(ipfsOptions);
     node.once('ready', () => {
       console.log('Online status: ', node.isOnline() ? 'online' : 'offline')
 
