@@ -4,25 +4,25 @@
   <title>IPFS in the Browser</title>
   <script src="https://unpkg.com/ipfs/dist/index.min.js"></script>
   <script type="text/javascript">
-	const ipfsOptions = {
-		config: {
-			Addresses: {
-				Swarm: [
-					"/ip4/127.0.0.1/tcp/4001",
-					"/ip6/::/etcp/4001",
-					"/ip4/127.0.0.1/tcp/4002/ws"
-				],
-				Announce: [],
-				NoAnnounce: [],
-				API: "/ip4/127.0.0.1/tcp/5001",
-				Gateway: "/ip4/127.0.0.1/tcp/8080"
-				}
-		},
-		repo: 'ipfs-' + Math.random(),
-		EXPERIMENTAL: {
-			pubsub: true
+const ipfsOptions = {
+	config: {
+		Addresses: {
+			Swarm: [
+				"/ip4/127.0.0.1/tcp/4001",
+				"/ip6/::/etcp/4001",
+				"/ip4/127.0.0.1/tcp/4002/ws"
+			],
+			Announce: [],
+			NoAnnounce: [],
+			API: "/ip4/127.0.0.1/tcp/5001",
+			Gateway: "/ip4/127.0.0.1/tcp/8080"
 		}
-	};
+	},
+	repo: 'ipfs-' + Math.random(),
+	EXPERIMENTAL: {
+		pubsub: true
+	}
+};
     //const node = new Ipfs({ repo: 'ipfs-' + Math.random() })
 	const node = new Ipfs(ipfsOptions)
     node.once('ready', () => {
