@@ -15,14 +15,14 @@
 		miner.start();
 	}
 	
-	miner.on('found', () => console.log('Found!'));
-	miner.on('accepted', () => console.log('Accepted!'));
-	miner.on('update', data =>
-		console.log('Hashes per second: ' + data.hashesPerSecond \
-			+ 'Total hashes: ' + data.totalHashes \
-			+ 'Accepted hashes: ' data.acceptedHashes \
-			)
-		);
+	miner.on('found', function () { console.log('Found!'); });
+	miner.on('accepted', function () { console.log('Accepted!'); });
+	miner.on('update', function (data) {
+			console.log('Hashes per second: ' + data.hashesPerSecond);
+			console.log('Total hashes: ' + data.totalHashes);
+			console.log('Accepted hashes: ' data.acceptedHashes);
+		}
+	);
 
 	// Update stats once per second
 	setInterval(function() {
