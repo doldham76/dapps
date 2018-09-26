@@ -3,7 +3,7 @@
 /* global Hls Ipfs HlsjsIpfsLoader */
 /* eslint-env browser */
 
-const testhash = 'QmYHbkCPaET6EthWwgQdnwZq9Tacd7tzCHDjTo2itPXg3Z'
+const testhash = 'QmWx8AhWLAMw3n6onEEXZMj5UQPWZMoRtr3WdTXRbKBRYx'
 const repoPath = 'ipfs-' + Math.random()
 const node = new Ipfs({ repo: repoPath })
 
