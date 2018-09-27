@@ -9,7 +9,7 @@ const node = new Ipfs({ repo: repoPath })
 
 node.on('ready', () => {
   Hls.DefaultConfig.loader = HlsjsIpfsLoader
-  Hls.DefaultConfig.debug = false
+  Hls.DefaultConfig.debug = true
   if (Hls.isSupported()) {
     const video = document.getElementById('video')
     const hls = new Hls()
