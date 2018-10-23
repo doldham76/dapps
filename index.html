@@ -92,7 +92,7 @@ class Index extends React.Component {
     });
   };
   render() {
-    const { classes,theme } = this.props;
+    const { classes } = this.props;
     //const { open } = this.state;
     return (
       <Card className={classes.card}>
@@ -107,11 +107,13 @@ class Index extends React.Component {
           </CardContent>
           <div className={classes.controls}>
             <IconButton aria-label="Previous">
+              {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
             </IconButton>
             <IconButton aria-label="Play/pause">
               <PlayArrowIcon className={classes.playIcon} />
             </IconButton>
             <IconButton aria-label="Next">
+              {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
             </IconButton>
           </div>
         </div>
@@ -124,7 +126,7 @@ class Index extends React.Component {
     );
   }
 }
-export const App = withStyles(styles)(Index);
+const App = withStyles(styles)(Index);
 ReactDOM.render(<App />, document.getElementById('root'));
   </script>
   <div id="newrelease">
