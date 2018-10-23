@@ -82,6 +82,7 @@ class Index extends React.Component {
     const { classes } = this.props;
     //const { open } = this.state;
     return (
+      <MuiThemeProvider theme={theme}>
       <Card className={classes.card}>
         <div className={classes.details}>
           <CardContent className={classes.content}>
@@ -110,6 +111,7 @@ class Index extends React.Component {
           title="Live from space album cover"
         />
       </Card>
+      </MuiThemeProvider>
     );
   }
 }
