@@ -53,12 +53,28 @@
   },
 });
 const styles = theme => ({
-  root: {
-    textAlign: 'center',
-    paddingTop: theme.spacing.unit * 20,
+  card: {
+    display: 'flex',
   },
-  icon: {
-    marginRight: theme.spacing.unit,
+  details: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  content: {
+    flex: '1 0 auto',
+  },
+  cover: {
+    width: 151,
+  },
+  controls: {
+    display: 'flex',
+    alignItems: 'center',
+    paddingLeft: theme.spacing.unit,
+    paddingBottom: theme.spacing.unit,
+  },
+  playIcon: {
+    height: 38,
+    width: 38,
   },
 });
 class Index extends React.Component {
@@ -76,40 +92,42 @@ class Index extends React.Component {
     });
   };
   render() {
-    const { classes } = this.props;
+    const { classes,theme } = this.props;
     const { open } = this.state;
     return (
-      <MuiThemeProvider theme={theme}>
-        <div className={classes.root}>
-          <CssBaseline />
-          <Dialog open={open} onClose={this.handleClose}>
-            <DialogTitle>Super Secret Password</DialogTitle>
-            <DialogContent>
-              <DialogContentText>1-2-3-4-5</DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button color="primary" onClick={this.handleClose}>
-                OK
-              </Button>
-            </DialogActions>
-          </Dialog>
-          <Typography variant="h4" gutterBottom>
-            Material-UI
-          </Typography>
-          <Typography variant="subtitle1" gutterBottom>
-            example project
-          </Typography>
-          <Button variant="contained" color="secondary" onClick={this.handleClick}>
-            <Icon className={classes.icon}>fingerprint</Icon>
-            Super Secret Password
-          </Button>
+      <Card className={classes.card}>
+        <div className={classes.details}>
+          <CardContent className={classes.content}>
+            <Typography component="h5" variant="h5">
+              Live From Space
+            </Typography>
+            <Typography variant="subtitle1" color="textSecondary">
+              Mac Miller
+            </Typography>
+          </CardContent>
+          <div className={classes.controls}>
+            <IconButton aria-label="Previous">
+              {theme.direction === 'rtl' ? <SkipNextIcon /> : <SkipPreviousIcon />}
+            </IconButton>
+            <IconButton aria-label="Play/pause">
+              <PlayArrowIcon className={classes.playIcon} />
+            </IconButton>
+            <IconButton aria-label="Next">
+              {theme.direction === 'rtl' ? <SkipPreviousIcon /> : <SkipNextIcon />}
+            </IconButton>
+          </div>
         </div>
-      </MuiThemeProvider>
+        <CardMedia
+          className={classes.cover}
+          image="/static/images/cards/live-from-space.jpg"
+          title="Live from space album cover"
+        />
+      </Card>
     );
   }
 }
 const App = withStyles(styles)(Index);
-ReactDOM.render(<App />, document.getElementById('root')); 
+ReactDOM.render(<App />, document.getElementById('root'));
   </script>
   <div id="newrelease">
     <video id="video" width="960" height="540" controls poster="https://m.media-amazon.com/images/M/MV5BMzkyNzQ1Mzc0NV5BMl5BanBnXkFtZTcwODg3MzUzMw@@._V1_SY1000_CR0,0,675,1000_AL_.jpg"></video>
