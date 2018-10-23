@@ -78,19 +78,6 @@ const styles = theme => ({
   },
 });
 class Index extends React.Component {
-  state = {
-    open: false,
-  };
-  handleClose = () => {
-    this.setState({
-      open: false,
-    });
-  };
-  handleClick = () => {
-    this.setState({
-      open: true,
-    });
-  };
   render() {
     const { classes } = this.props;
     //const { open } = this.state;
@@ -126,7 +113,7 @@ class Index extends React.Component {
     );
   }
 }
-export default const App = withStyles(styles)(Index);
+const App = withStyles(styles)(Index);
 ReactDOM.render(<App />, document.getElementById('root'));
   </script>
   <div id="newrelease">
