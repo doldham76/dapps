@@ -12,12 +12,26 @@
   </head>
   <body>
     <h1>Now Playing</h1>
-    <div id="newrel1" class="card" style="width: 18rem;">
-      <img class="card-img-top" v-bind:src="poster" alt="">
-      <div class="card-body">
-        <h5 class="card-title">{{title}}</h5>
-        <p class="card-text">{{description}}</p>
-        <a :href="hash" class="btn btn-primary">Play</a>
+    <div id="newrel1" class="row">
+      <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" v-bind:src="poster" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">{{description}}</p>
+            <a :href="hash" class="btn btn-primary">Play</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" v-bind:src="poster" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">{{description}}</p>
+            <a :href="hash" class="btn btn-primary">Play</a>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Optional JavaScript -->
