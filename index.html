@@ -50,12 +50,11 @@
     <script src="https://unpkg.com/hlsjs-ipfs-loader@0.1.2/dist/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script type="text/javascript">
-    import Dash from './components/dash.vue';
     const repoPath = 'ipfs-' + Math.random();
     const node = new Ipfs({ repo: repoPath });
     var vm = new Vue({
       el: "#newrel1",
-      template: '<Dash/>',
+      template: '#dashtemplate',
       data: {
         hash:"./img/last_samurai_ver3.jpg",
         filename:"",
@@ -95,6 +94,28 @@
         }
       }
     });
+    </script>
+    <script type="text/x-template" id="dashtemplate">
+      <main role="main">
+        <div class="jumbotron">
+          <div class="container">
+            <video id="video" controls width="100%" height="55%"></video>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4" v-for"item in newreleases">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" v-bind:src="item.poster" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.title}}</h5>
+                  <button v-on:click="loadPlayer" >Play</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </script>
   </body>
 </html>
