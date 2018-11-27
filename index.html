@@ -50,15 +50,16 @@
     <script src="https://unpkg.com/hlsjs-ipfs-loader@0.1.2/dist/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
     <script type="text/javascript">
+    import Dash from './components/dash.vue';
     const repoPath = 'ipfs-' + Math.random();
     const node = new Ipfs({ repo: repoPath });
     var vm = new Vue({
-      template:"<main role='main'><div class='jumbotron'><div class='container'><video id='video' controls width='100%' height='55%'></video></div></div><div class='container'><div class='row'><div class='col-md-4'><div class='card' style='width: 18rem;'><img class='card-img-top' v-bind:src='poster' alt=''><div class='card-body'><h5 class='card-title'>{{title}}</h5><button v-on:click='loadPlayer' >Play</button></div></div></div><div class='col-md-4'><div class='card' style='width: 18rem;'><img class='card-img-top' v-bind:src='poster' alt=''><div class='card-body'><h5 class='card-title'>{{title}}</h5><button v-on:click='loadPlayer' >Play</button></div></div></div><div class='col-md-4'><div class='card' style='width: 18rem;'><img class='card-img-top' v-bind:src='poster' alt=''><div class='card-body'><h5 class='card-title'>{{title}}</h5><button v-on:click='loadPlayer' >Play</button></div></div></div></div></div></main>",
       el: "#newrel1",
+      template: '<Dash/>',
       data: {
         hash:"./img/last_samurai_ver3.jpg",
         filename:"",
-        newrelease:[{
+        newreleases:[{
           poster:"./img/last_samurai_ver3.jpg",
           title:"The Last Samurai",
           description:"Capt. Nathan Algren (Tom Cruise) is an American military officer hired by the Emperor of Japan to train the country's first army in the art of modern warfare. As the government attempts to eradicate the ancient Samurai warrior class in preparation for more Westernized and trade-friendly policies, Algren finds himself unexpectedly affected by his encounters with the Samurai, which places him at the center of a struggle between two eras and two worlds.",
