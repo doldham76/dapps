@@ -1,6 +1,6 @@
 {
     "name": "GreenNinja",
-    "start_url": "/dapps",
+    "start_url": "https://doldham76.github.io/dapps/",
     "description": "A simple todo app build on blockstack",
     "icons": [{
       "src": "http://blockstack-todos.appartisan.com/logo.png",
