@@ -1,6 +1,6 @@
 {
   "name": "BudFinder",
-  "start_url": "http://blockstack-todos.appartisan.com",
+  "start_url": "https://doldham76.github.com/dapps/",
   "description": "A simple todo app build on blockstack",
   "icons": [{
     "src": "http://blockstack-todos.appartisan.com/logo.png",
